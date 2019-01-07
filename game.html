@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ldq4ngUAAAAANztKrZWIK01nWTN1rbQ5cIl0l6g"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i|Bungee|VT323|Montserrat|Share+Tech+Mono:300" rel="stylesheet" type="text/css">
+<script src="../scripts/game.js"></script>
+<link rel="stylesheet" href="styles/game.css">
+<div class="g-recaptcha"
+          data-sitekey="6Ldq4ngUAAAAANztKrZWIK01nWTN1rbQ5cIl0l6g"
+          data-callback="getHighScores"
+          data-size="invisible">
+    </div>
+</head>
+<body onload="startGame()">
+  <p class="Score" id="score"></p>
+    <p id="level_text"> LEVEL UP</p>
+  <div class="presentation-content" id ="gameOver">
+    <h1 class="presentation-title" >Game Over</h1>
+     <div class="loader"id="loading">Loading...</div>
+      <p class="presentation-text" id="pos"></p>
+      <a href="#" class="btn6" onmouseup="restartGame()"> Start Over </a>
+  </div>
+</div>
+<script>
+document.body.onkeydown = function(e){
+    if(e.keyCode == 32){accelerate(-0.2)}
+    bg_music.play();
+}
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){accelerate(0.05)}
+}
+</script>
+</body>
+</html>
